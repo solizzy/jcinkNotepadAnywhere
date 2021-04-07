@@ -3,6 +3,8 @@ A script for making the UCP notepad available anywhere on a jcink forum.
 
 Due to jcink not allowed fetch requests to the domain from external domains, this script MUST be written inline via <script> tags OR hosted locally on your jcink forum (e.g. <script src="yourForum.jcink.net/script.js">). It cannot be implemented via CDN.
   
+ Were you using an older version and want to keep using that version? In the sidebar, you'll find a link to all versions under **Releases**.
+  
 # How to use?
 - Copy the script to your forum wrapper. 
 - On your forum, create an element with id="notepadWrapper". 
