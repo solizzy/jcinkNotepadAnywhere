@@ -10,6 +10,10 @@ async function createNotepad({ sizeSelector = true }) {
   const textHTML = await response.text();
   const ucp = new DOMParser().parseFromString(textHTML, "text/html");
   const notepad = ucp.querySelector('form[name="notepad"]');
+  statusEl = document.createElement("np-status");
+  notepad
+    .querySelector("input[type='submit']")
+    .insertAdjacentElement("afterend", statusEl);
 
   function handleNotepadUpdate(notepad) {
     notepad.addEventListener("submit", async (event) => {
@@ -18,12 +22,6 @@ async function createNotepad({ sizeSelector = true }) {
 
       let statusEl = notepad.querySelector("np-status");
 
-      if (statusEl === null) {
-        statusEl = document.createElement("np-status");
-        notepad
-          .querySelector("input[type='submit']")
-          .insertAdjacentElement("afterend", statusEl);
-      }
       statusEl.textContent = "Updating...";
 
       try {
