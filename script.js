@@ -1,5 +1,10 @@
-async function createNotepad({sizeSelector = true}) {
+async function createNotepad({ sizeSelector = true }) {
   const wrapper = document.querySelector("#notepadWrapper");
+
+  if (wrapper === null) {
+    console.error("No element with id='notepadWrapper'");
+    return;
+  }
 
   const response = await fetch("/index.php?act=UserCP&CODE=00");
   const textHTML = await response.text();
@@ -86,5 +91,5 @@ async function createNotepad({sizeSelector = true}) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  createNotepad({sizeSelector: true});
+  createNotepad({ sizeSelector: true });
 });
