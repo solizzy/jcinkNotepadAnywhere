@@ -1,3 +1,5 @@
+/* Jcink Notepad Anywhere v1.1.0  (https://github.com/solizzy/jcinkNotepadAnywhere) */
+
 async function createNotepad({ sizeSelector = true }) {
   const wrapper = document.querySelector("#notepadWrapper");
 
