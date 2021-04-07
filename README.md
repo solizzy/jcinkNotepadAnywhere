@@ -13,3 +13,10 @@ to `createNotepad({ sizeSelector: false });`
   - `#notepadWrapper form` for managing form layout
   - `#notepadWrapper [name="notes"]` for managing large textArea
   - `#notepadWrapper [type="submit"]` for managing submit button
+  - `#notepadWrapper np-status` for managing status text
+
+# Features
+- Guests without notepads will simply see an error message: *You must be logged in to see your notepad!* This can be edited on line 89.
+- Updating will **not** redirect, unlike in UCP. Instead, a status text will appear (updating... / updated!)
+- If using the size selector, size of notepad will change when selecting the appropriate option. The size will not be saved unless user clicks update. This does NOT affect the width of the textarea if the user has edited it via the resizer.
+- The UCP notepad and this notepad are always in sync! Notes are only updated after hitting the 'update' button, as its done in UCP.
